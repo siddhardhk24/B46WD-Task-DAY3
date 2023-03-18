@@ -1,1 +1,114 @@
+1.For a given JSON iterate over all for loops(for, for in, for of, forEach).
+
+for loop
+   A for loop repeats until a specified condition evaluates to false. When a for loop executes, the following occurs: The initializing expression initialization , if any, is executed.
+var a=[{ "name":"siddhardh", "age":26, "id":1224},
+       { "name":"rajini", "age":67, "id":1212},
+       { "name":"kamal", "age":65, "id":1107}];
+for(let i=0;i<a.length;i++)
+{
+    var txt=a[i];
+    console.log(txt.name+" "+txt.age+" "+txt.id);
+}
+output:
+siddhardh 26 1224
+rajini 67 1212
+kamal 65 1107
+
+for in
+   The for...in statements combo iterates (loops) over the properties of an object. The code block inside the loop is executed once for each property.
+var a=[{ "name":"siddhardh", "age":26, "id":1224},
+       { "name":"rajini", "age":67, "id":1212},
+       { "name":"kamal", "age":65, "id":1107}];
+for(let i in a)
+{
+    var txt=a[i];
+    console.log(txt.name+" "+txt.age+" "+txt.id);
+}
+output:
+{ "name": "siddhardh", "age": 26, "id": 1224}
+{ "name": "rajini", "age": 67, "id": 1212}
+{ "name": "kamal", "age": 65, "id": 1107}
+
+for of
+   The for...of statements combo iterates (loops) over the values of any iterable. The code block inside the loop is executed once for each value.
+var a=[{ "name":"siddhardh", "age":26, "id":1224},
+       { "name":"rajini", "age":67, "id":1212},
+       { "name":"kamal", "age":65, "id":1107}];
+for(let i of a)
+{
+    console.log(i);
+}
+output:
+{ "name": "siddhardh", "age": 26, "id": 1224}
+{ "name": "rajini", "age": 67, "id": 1212}
+{ "name": "kamal", "age": 65, "id": 1107}
+
+forEach:
+   The forEach() method calls a function for each element in an array. The forEach() method is not executed for empty elements.
+   
+var a=[{ "name":"siddhardh", "age":26, "id":1224},
+       { "name":"rajini", "age":67, "id":1212},
+       { "name":"kamal", "age":65, "id":1107}];
+    a.forEach(myFunction);
+output:
+siddhardh 26 1224
+rajini 67 1212
+kamal 65 1107
+
+
+
+
+2.create your own resume data in JSON format
+my code:
+let resume = [{"About":[{ "Name": "siddhardh"},
+{"Email": "anandhsidhu541@gmail.com"},
+{"Phone": "7904857514"}]},
+{"Education":[{"degree": "BE.Mechanical Engineering"},
+  {"Edu Details":" B.E. Mechanical Engineering passed out 2018 in TRP Engineering College with 6.4 CGPA. HSC pass out 2014 in Kamala Subramanium Matric Hr Sec School with 71. SSLC pass out in 2012 in Kamala Subramanium Matric Hr Sec School with 80%"}]},
+{"work_experience": [{"position": "2D CADD Designer"},
+    {"details":"Worked in PRIORITY ENERGY CONSULTING(PEC) as a 2D CADD designer.(2019SEP-2020MARCH)"}]},
+{"skills": "C,java,javascript,html,css,react,nodejs,sql,Git,AWS,selenium,Data driven,TestNG,cucumber"},
+{"Interest": "Software Developing, Software Testing"}
+]
+
+for(let i of resume)
+{
+    console.log(i);
+}
+
+
+
+
+3.Difference between window,screen and document.
+i)Window
+      Window is the main JavaScript object root and the global object in a web browser, also can be treated as the root of
+      DOM(document object model). You can access it as window.
+      
+      {window}<---{document} === window.document.{property}
+      
+      The window is the first thing that gets loaded into the web browser. This window object has the major properties like 
+      length, innerWidth, innerHeight, name, if it has been closed, its parents etc.
+ 
+ ii)Screen
+      The Window object also has a screen object with properties describing the physical display:
+            > screen properties width and height are the full screen
+            > screen properties availWidth and availHeight omit the toolbar
+      window.screen 
+      screen is a information object about physical screen dimensions.
+      
+      if iframe happens
+      windows.document{property} contains any iframes<iframe>. then it open a seperate window window.iframe[0].{window property}.
+      It considered as a new window with its own document. The original parent window, is responsible for other windows to be 
+      loaded and not the document. The property to access a frame is window.frames[].
+      
+iii)Document
+      The Document object(DOM) is your html or other document that will be loaded into the browser. The document actually 
+      gets loaded inside the window object and has properties like title, URL, cookie, etc. If you want to access a property 
+      for the window it is window.property is to be used.
+      
+      window.document or document is the main object of the potentially visible document object model/DOM.
+      
+      The window is the global object you can refer any properties of it with just the property name and don't have to 
+      write down window. it will be figured out by the runtime.
 
